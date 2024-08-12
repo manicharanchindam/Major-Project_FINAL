@@ -1,0 +1,101 @@
+/* CSS styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #0078d4; /* Microsoft Blue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    color: #0078d4; /* Microsoft Blue */
+    font-size: 3em; /* Larger font size */
+    font-weight: bold;
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+/* Updated color for IntelliPredict heading */
+h1 {
+    color: white; /* Orange color */
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #0078d4; /* Microsoft Blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #005a9e; /* Darker Microsoft Blue */
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    background-color: #0078d4; /* Microsoft Blue */
+    color: white;
+    padding: 12px 24px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+label:hover {
+    background-color: #005a9e; /* Darker Microsoft Blue */
+}
