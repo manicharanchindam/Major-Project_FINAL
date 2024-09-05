@@ -6,177 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliPredict</title>
-    <style>
-        /* CSS styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        header {
-            background-color: #0078d4; /* Microsoft Blue */
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-
-
-        h1, h2, h3 {
-            color: #0078d4; /* Microsoft Blue */
-            font-size: 3em; /* Larger font size */
-            font-weight: bold;
-            text-align: center; /* Center the heading */
-            margin-bottom: 20px; /* Add some space below the heading */
-        }
-
-        /* Updated color for IntelliPredict heading */
-        h1 {
-            color: white; /* Orange color */
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.5;
-        }
-
-        button {
-            background-color: #0078d4; /* Microsoft Blue */
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 1em;
-            display: inline-block;
-        }
-
-        button:hover {
-            background-color: #005a9e; /* Darker Microsoft Blue */
-        }
-
-        #selected-file-name {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 1em;
-            color: #333;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        label {
-            background-color: #0078d4; /* Microsoft Blue */
-            color: white;
-            padding: 12px 24px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 1em;
-            display: inline-block;
-        }
-
-        label:hover {
-            background-color: #005a9e; /* Darker Microsoft Blue */
-        }
-
-        #file-name {
-            margin-top: 5px;
-            display: none;
-        }
-
-        /* Additional styles for Prediction Form */
-        .prediction-form {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            text-align: left;
-        }
-
-        .prediction-form label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .prediction-form input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .prediction-form button {
-            width: auto;
-            padding: 12px 24px;
-        }
-
-        #prediction-result-textbox {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-
-        /* Table styles */
-        table {
-            margin-top: 20px;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -194,11 +24,13 @@
     <main>
         <section id="about">
             <h2>About IntelliPredict</h2>
-            <p>Welcome to IntelliPredict, a tool designed to predict student CGPA categories for undergraduate school admissions.</p>
+            <p>IntelliPredict is an advanced tool designed to assist university admissions teams by predicting a student’s CGPA based on key academic indicators like high school GPA, SAT scores, and GAT scores. This tool uses cutting-edge machine learning algorithms to provide accurate and insightful predictions.</p>
+            <p>Our goal is to make the university admission process smoother and more efficient, helping institutions select candidates who are likely to succeed. Whether you’re an admissions officer or a researcher, IntelliPredict will make data-driven decisions easier.</p>
         </section>
 
         <section id="upload">
             <h2>Upload Dataset</h2>
+            <p>Upload a dataset containing student academic information to analyze and predict CGPA categories. Supported format: CSV</p>
             <form action="/upload" method="POST" enctype="multipart/form-data">
                 <label for="dataset" id="file-label">Select a CSV file:</label>
                 <input type="file" id="dataset" name="dataset" accept=".csv" onchange="updateFileName()">
@@ -207,56 +39,30 @@
             <p id="file-name"></p>
         </section>
 
-        <section id="prediction-form" class="prediction-form">
+        <section id="prediction-form">
             <h2>Prediction Form</h2>
+            <p>Enter the student's academic details below to predict their CGPA category.</p>
             <form id="predict-form" action="/predict" method="POST" onsubmit="submitPredictionForm(event)">
                 <label for="hsga">High School GPA:</label>
                 <input type="text" id="hsga" name="hsga" required>
+
                 <label for="sat">SAT Score:</label>
                 <input type="text" id="sat" name="sat" required>
+
                 <label for="gat">GAT Score:</label>
                 <input type="text" id="gat" name="gat" required>
+
                 <button type="submit">Predict</button>
                 <input type="text" id="prediction-result-textbox" readonly>
             </form>
         </section>
-        
     </main>
 
-
+    <footer>
+        <p>&copy; 2024 IntelliPredict. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
-    <script>
-        
-        function submitPredictionForm(event) {
-    event.preventDefault();
-
-    const hsga = document.getElementById('hsga').value;
-    const sat = document.getElementById('sat').value;
-    const gat = document.getElementById('gat').value;
-
-    fetch('/predict', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ hsga, sat, gat })
-    })
-    .then(response => response.json())
-    .then(data => {
-        const predictionResultTextbox = document.getElementById('prediction-result-textbox');
-        predictionResultTextbox.value = `The Student predicted CGPA Category is : ${data.predicted_category}`; // Update to match the key in the JSON response
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while predicting the CGPA category.');
-    });
-
-
-
-}
-
-    </script>
 </body>
 
 </html>

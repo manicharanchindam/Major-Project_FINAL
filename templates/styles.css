@@ -1,84 +1,83 @@
-/* CSS styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    box-sizing: border-box;
 }
 
+/* Body and basic styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
 header {
-    background-color: #0078d4; /* Microsoft Blue */
+    background-color: #0078d4;
     color: white;
-    text-align: center;
     padding: 20px 0;
+    text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 nav ul li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.1em;
 }
 
+/* Main content styles */
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 0 20px;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
 }
 
-footer {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* About section */
+#about {
+    margin-bottom: 50px;
 }
 
-h1, h2, h3 {
-    color: #0078d4; /* Microsoft Blue */
-    font-size: 3em; /* Larger font size */
-    font-weight: bold;
-    text-align: center; /* Center the heading */
-    margin-bottom: 20px; /* Add some space below the heading */
+#about h2 {
+    color: #0078d4;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-/* Updated color for IntelliPredict heading */
-h1 {
-    color: white; /* Orange color */
-}
-
-p {
+#about p {
     font-size: 1.2em;
-    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-button {
-    background-color: #0078d4; /* Microsoft Blue */
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 1em;
+/* Upload section */
+#upload {
+    margin-bottom: 50px;
 }
 
-button:hover {
-    background-color: #005a9e; /* Darker Microsoft Blue */
+#upload h2 {
+    color: #0078d4;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#upload p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#upload form {
+    text-align: center;
 }
 
 input[type="file"] {
@@ -86,16 +85,77 @@ input[type="file"] {
 }
 
 label {
-    background-color: #0078d4; /* Microsoft Blue */
+    background-color: #0078d4;
     color: white;
-    padding: 12px 24px;
-    margin-top: 10px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 1em;
 }
 
 label:hover {
-    background-color: #005a9e; /* Darker Microsoft Blue */
+    background-color: #005a9e;
+}
+
+button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #005a9e;
+}
+
+/* Prediction form section */
+#prediction-form h2 {
+    color: #0078d4;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#prediction-form p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#prediction-form form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#prediction-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#prediction-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#prediction-result-textbox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #0078d4;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
